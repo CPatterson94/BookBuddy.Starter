@@ -1,31 +1,33 @@
-import { useState } from "react";
+// import { useState } from "react";
+import { useGetBooksQuery } from "./api";
+// import { Route, Routes } from "react-router-dom";
 import bookLogo from "./assets/books.png";
+import Nav from "./components/Navigation/Nav";
+import Books from "./components/BookPage/Books";
 
 function App() {
-  const [token, setToken] = useState(null);
+  // const [token, setToken] = useState(null);
+  const books = useGetBooksQuery();
+  console.log(books);
 
   return (
     <>
+      <Nav />
+      {/* {isLoading ? (
+        <h1>IsLoading</h1>
+      ) : (
+        <Routes>
+          <Route index element={<Books />} />
+          <Route path={"/books/:id"} element={<BooksPage />} />
+          <Route path={"addPlayer"} element={< />} />
+        </Routes>
+      )} */}
+
+      <Books />
       <h1>
         <img id="logo-image" src={bookLogo} />
         Library App
       </h1>
-
-      <p>
-        Complete the React components needed to allow users to browse a library
-        catalog, check out books, review their account, and return books that
-        they've finished reading.
-      </p>
-
-      <p>
-        You may need to use the `token` in this top-level component in other
-        components that need to know if a user has logged in or not.
-      </p>
-
-      <p>
-        Don't forget to set up React Router to navigate between the different
-        views of your single page application! Where to start...
-      </p>
     </>
   );
 }
