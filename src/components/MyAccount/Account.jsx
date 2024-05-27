@@ -11,8 +11,8 @@ export default function Account() {
   };
   return (
     <>
-      <h1 id="accPg">DASHBOARD</h1>
-      <p id={"accPg2"}>My Account!</p>
+      <h1 id="accPg">My Account</h1>
+      <p id={"accPg2"}>Account Info</p>
       <div className="accBox">
         <h4 className="boxTitles">Checked Out books:</h4>
         {cart.length === 0 ? (
