@@ -5,16 +5,16 @@ import { faIdCard } from "@fortawesome/free-solid-svg-icons";
 export default function NavLoggedIn() {
   return (
     <>
-      <nav className="nav">
+      <nav>
         <div className="link-container">
-          <Link to={"/"} className="links">
-            <h3>HOME</h3>
+          <Link to={"/"} className="linksH">
+            <h3>Home</h3>
           </Link>
-          <Link to={"/books"} className="links">
-            <h3>BOOKS</h3>
+          <Link to={"/books"} className="linksB">
+            <h3>Books</h3>
           </Link>
 
-          <Link to={"/users/me"} className="links-log">
+          <Link to={"/users/me"} className="links-loggedin">
             <FontAwesomeIcon
               icon={faIdCard}
               size={"3x"}
@@ -22,10 +22,10 @@ export default function NavLoggedIn() {
             />
             <h6>Account Info</h6>
           </Link>
-          <Link to={"/"} className="links-log-button-link">
+          <Link to={"/"} className="links-logout">
             <button
               onClick={localStorage.removeItem("token")}
-              className="links-log-button"
+              className="links-logout-button"
             >
               Logout
             </button>

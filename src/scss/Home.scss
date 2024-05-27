@@ -1,0 +1,42 @@
+body {
+  font-family: Georgia, serif;
+  background-color: gray;
+  margin: 5px;
+  padding: 0;
+}
+#home-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 90px;
+}
+
+#home-container h1 {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+#Home {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  min-width: 700px;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 20px;
+  border-color: black;
+  border-radius: 5px;
+  border: 2px;
+  border-style: solid;
+}
+.Home-img {
+  display: flex;
+  justify-content: center;
+  width: 501px;
+  height: 750px;
+  margin: 20px;
+  border-color: black;
+  border-radius: 5px;
+  border: 2px;
+  border-style: solid;
+}

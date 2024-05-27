@@ -1,8 +1,8 @@
 function Books({ data }) {
   return (
     <>
-      <div className="allbookscard" key={data.id}>
-        <div className="allbookscontainer">
+      <div className="allBooksCard" key={data.id}>
+        <div className="allBooksContainer">
           <img src={data.coverimage} alt={data.title} className="art" />
         </div>
         <h3 className="titles">{data.title}</h3>

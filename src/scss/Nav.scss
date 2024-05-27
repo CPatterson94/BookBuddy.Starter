@@ -1,0 +1,88 @@
+Nav {
+  display: flex;
+  height: 90px;
+  background-color: lightgray;
+  border-color: black;
+  border: 4px;
+  border-style: solid;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+}
+
+.linksH {
+  display: flex;
+  margin: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  text-decoration: none;
+}
+.linksH:hover {
+  border-color: black;
+  border: 2px;
+  border-style: solid;
+}
+.linksB {
+  display: flex;
+  margin: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  text-decoration: none;
+}
+.linksB:hover {
+  border-color: black;
+  border: 2px;
+  border-style: solid;
+}
+.UserButt {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  text-decoration: none;
+}
+.UserButt:hover {
+  border-color: black;
+  border: 2px;
+  border-style: solid;
+}
+.UserButt h6 {
+  margin: 2px;
+}
+
+.links-loggedin {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  text-decoration: none;
+}
+.links-loggedin:hover {
+  border-color: black;
+  border: 2px;
+  border-style: solid;
+}
+.links-loggedin h6 {
+  margin: 2px;
+}
+.links-logout {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.links-logout .links-logout-button {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}

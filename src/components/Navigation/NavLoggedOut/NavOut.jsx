@@ -5,12 +5,12 @@ import { faIdCard } from "@fortawesome/free-solid-svg-icons";
 export default function NavLoggedOut() {
   return (
     <>
-      <nav className="nav">
+      <nav>
         <div className="link-container">
-          <Link to={"/"} className="links">
+          <Link to={"/"} className="linksH">
             <h3>Home</h3>
           </Link>
-          <Link to={"books"} className="links">
+          <Link to={"books"} className="linksB">
             <h3>Books</h3>
           </Link>
           <Link to={"users/login"} className="UserButt">

@@ -1,0 +1,25 @@
+.allBooksCard {
+  display: flex;
+  flex-direction: column;
+}
+.allBooksContainer {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  background-color: lightgray;
+  border-radius: 5px;
+  border: 2px;
+  border-style: double;
+  border-color: black;
+  padding: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: black;
+  text-decoration: none;
+}
+.art {
+  width: 600px;
+}
