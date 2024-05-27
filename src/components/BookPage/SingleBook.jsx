@@ -12,30 +12,30 @@ export default function SingleBook({ data, token }) {
   return (
     <>
       <div className="card-pop" key={data.id}>
-        <div className="container-pop">
-          <img src={data.coverimage} alt={data.title} className="cover-pop" />
+        <img src={data.coverimage} alt={data.title} className="cover-pop" />
+        <div className="card-pop-container">
+          <h3>{data.title}</h3>
+          <h3>Written By: {data.author}</h3>
+          <h4>Summary: {data.description}</h4>
+          {token !== null &&
+          data.available !== false &&
+          !cart.includes(data) ? (
+            <button
+              className="single-button"
+              onClick={() => handleAddToCart(data)}
+            >
+              Check Out Book
+            </button>
+          ) : cart.includes(data) ? (
+            <h5>Successfully checked out!</h5>
+          ) : token === null ? (
+            <h5>You must be logged in to check out a book!</h5>
+          ) : (
+            <h5>Book not available</h5>
+          )}
         </div>
-        <h3 className="title-pop">{data.title}</h3>
-        <h3 className="title-pop">By: {data.author}</h3>
-        <h4 className="title-pop">Summary: {data.description}</h4>
-        {token !== null && data.available !== false && !cart.includes(data) ? (
-          <button
-            className="single-button"
-            onClick={() => handleAddToCart(data)}
-          >
-            Check Out Book
-          </button>
-        ) : cart.includes(data) ? (
-          <h5 className="title-pop">Successfully checked out!</h5>
-        ) : token === null ? (
-          <h5 className="title-pop">
-            You must be logged in to check out a book!
-          </h5>
-        ) : (
-          <h5 className="title-pop">Book not available</h5>
-        )}
         <Link to={"/books"} className="links-single-button">
-          <button className="single-button">Back to Books</button>
+          <button className="single-button-back">Back to Books</button>
         </Link>
       </div>
     </>
