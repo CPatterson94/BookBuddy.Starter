@@ -1,33 +1,40 @@
-// import { useState } from "react";
-import { useGetBooksQuery } from "./api";
-// import { Route, Routes } from "react-router-dom";
-import bookLogo from "./assets/books.png";
-import Nav from "./components/Navigation/Nav";
-import Books from "./components/BookPage/Books";
+import { Route, Routes } from "react-router-dom";
+import NavLoggedIn from "./components//Navigation/NavLoggedIn/NavIn";
+import NavLoggedOut from "./components/Navigation/NavLoggedOut/NavOut";
+import Home from "./components/Home";
+import BooksList from "./components/BookPage/AllBooksList";
+import SingleBookPage from "./components/BookPage/SingleBookPage";
+import Account from "./components/MyAccount/Account";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import { useState } from "react";
+
+import { useGetBooksQuery } from "./api/index";
 
 function App() {
-  // const [token, setToken] = useState(null);
-  const books = useGetBooksQuery();
-  console.log(books);
-
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const { isLoading } = useGetBooksQuery();
   return (
     <>
-      <Nav />
-      {/* {isLoading ? (
-        <h1>IsLoading</h1>
+      {token !== null ? <NavLoggedIn /> : <NavLoggedOut />}
+      {isLoading ? (
+        <h1>Loading...</h1>
       ) : (
         <Routes>
-          <Route index element={<Books />} />
-          <Route path={"/books/:id"} element={<BooksPage />} />
-          <Route path={"addPlayer"} element={< />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/books" element={<BooksList />} />
+          <Route
+            path={"/users/register"}
+            element={<Register token={token} setToken={setToken} />}
+          />
+          <Route
+            path={"/users/login"}
+            element={<Login token={token} setToken={setToken} />}
+          />
+          <Route path="/books/:id" element={<SingleBookPage token={token} />} />
+          <Route path="/users/me" element={<Account />} />
         </Routes>
-      )} */}
-
-      <Books />
-      <h1>
-        <img id="logo-image" src={bookLogo} />
-        Library App
-      </h1>
+      )}
     </>
   );
 }
